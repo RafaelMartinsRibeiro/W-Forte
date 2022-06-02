@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../styles/components/Navbar.module.css";
+
 export function Navbar() {
   return (
     <div className="flex justify-between items-center bg-[#293036] text-brand-white sticky top-0 p-3 shadow-md shadow-[#00000085]">
