@@ -1,6 +1,11 @@
-:root {
-  --yellow: #ffcc00;
-  --white: #f3f3f3;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .li-primary {
+    @apply font-black ml-4 p-2 cursor-pointer transition-colors duration-200;
+  }
 }
 
 * {

@@ -1,18 +1,16 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import styles from "../styles/pages/Home.module.css";
-
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div className="max-w-5xl my-0 mx-auto flex flex-col">
       <Head>
         <title>Início | W Forte</title>
       </Head>
 
-      <main className={styles.main}></main>
+      <main></main>
 
-      <footer className={styles.footer}></footer>
+      <footer></footer>
     </div>
   );
 };
