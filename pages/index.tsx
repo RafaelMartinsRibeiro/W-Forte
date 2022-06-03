@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { Schedule } from "../components/Schedule";
 
 const Home: NextPage = () => {
   return (
@@ -18,7 +19,7 @@ const Home: NextPage = () => {
         </section>
 
         <section>
-          
+          <Schedule />
         </section>
       </main>
 
