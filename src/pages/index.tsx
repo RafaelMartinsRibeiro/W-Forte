@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Schedule } from "../components/Schedule";
+import { Structure } from "../components/Structure";
 
 const Home: NextPage = () => {
   return (
@@ -20,6 +21,10 @@ const Home: NextPage = () => {
 
         <section>
           <Schedule />
+        </section>
+
+        <section>
+          <Structure />
         </section>
       </main>
 
