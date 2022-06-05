@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { Modalities } from "../components/Modalities";
 import { Schedule } from "../components/Schedule";
 import { Structure } from "../components/Structure";
 
@@ -25,6 +26,10 @@ const Home: NextPage = () => {
 
         <section>
           <Structure />
+        </section>
+
+        <section>
+          <Modalities />
         </section>
       </main>
 

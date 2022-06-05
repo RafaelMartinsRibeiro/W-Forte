@@ -4,16 +4,16 @@ import { useState } from "react";
 export function Structure() {
   const [gymImage, setGymImage] = useState(1);
 
-  function changeNextImage() {
+  const changeNextImage = () => {
     setGymImage(gymImage === 3 ? 1 : gymImage + 1);
-  }
+  };
 
-  function changePreviousImage() {
+  const changePreviousImage = () => {
     setGymImage(gymImage === 1 ? 3 : gymImage - 1);
-  }
+  };
 
   return (
-    <div className="flex flex-col items-center justify-center pb-6 ">
+    <div className="flex flex-col items-center justify-center pb-9 ">
       <h2 className="text-shadow font-black text-brand-white text-5xl my-9">
         Estrutura
       </h2>

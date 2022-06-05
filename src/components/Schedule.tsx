@@ -1,6 +1,6 @@
 export function Schedule() {
   return (
-    <div className="flex flex-col items-center justify-center bg-[#111111] pb-6">
+    <div className="flex flex-col items-center justify-center bg-[#111111] pb-9">
       <h2 className="text-shadow font-black text-brand-white text-5xl my-9">
         Horários
       </h2>

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function Navbar() {
   return (
-    <div className="flex justify-between items-center bg-[#293036] text-brand-white sticky top-0 p-3 shadow-md shadow-[#00000085]">
+    <div className="z-50 flex justify-between items-center bg-[#293036] text-brand-white sticky top-0 p-3 shadow-md shadow-[#00000085]">
       <Link href="/">
         <a>
           <div className="group flex items-center ml-3">
