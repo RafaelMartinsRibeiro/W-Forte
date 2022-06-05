@@ -2,26 +2,14 @@ import { SwapLeftOutlined, SwapRightOutlined } from "@ant-design/icons";
 import { useState } from "react";
 
 export function Structure() {
-  const [gymImage, setGymImage] = useState("acad05.jpg");
+  const [gymImage, setGymImage] = useState(1);
 
   function changeNextImage() {
-    if (gymImage == "acad05.jpg") {
-      setGymImage("acad03.jpg");
-    } else if (gymImage == "acad03.jpg") {
-      setGymImage("acad07.jpg");
-    } else if (gymImage == "acad07.jpg") {
-      setGymImage("acad05.jpg");
-    }
+    setGymImage(gymImage === 3 ? 1 : gymImage + 1);
   }
 
   function changePreviousImage() {
-    if (gymImage == "acad05.jpg") {
-      setGymImage("acad07.jpg");
-    } else if (gymImage == "acad03.jpg") {
-      setGymImage("acad05.jpg");
-    } else if (gymImage == "acad07.jpg") {
-      setGymImage("acad03.jpg");
-    }
+    setGymImage(gymImage === 1 ? 3 : gymImage - 1);
   }
 
   return (
@@ -37,7 +25,7 @@ export function Structure() {
         />
 
         <img
-          src={`/assets/${gymImage}`}
+          src={`/assets/gym${gymImage}.jpg`}
           alt="gymImage"
           className="w-[51.1rem] h-[34rem] shadow-md shadow-[#00000085] rounded-2xl"
         />
@@ -50,27 +38,27 @@ export function Structure() {
 
       <div className="flex items-center justify-center gap-5 mt-9">
         <img
-          src="/assets/acad05.jpg"
+          src="/assets/gym1.jpg"
           alt="gymImage"
-          onClick={() => setGymImage("acad05.jpg")}
+          onClick={() => setGymImage(1)}
           className={`w-36 h-28 shadow-md shadow-[#00000085] rounded-2xl cursor-pointer transition-opacity duration-300 ${
-            gymImage === "acad05.jpg" ? "opacity-100" : "opacity-40"
+            gymImage === 1 ? "opacity-100" : "opacity-40"
           }`}
         />
         <img
-          src="/assets/acad03.jpg"
+          src="/assets/gym2.jpg"
           alt="gymImage"
-          onClick={() => setGymImage("acad03.jpg")}
+          onClick={() => setGymImage(2)}
           className={`w-36 h-28 shadow-md shadow-[#00000085] rounded-2xl cursor-pointer transition-opacity duration-300 ${
-            gymImage === "acad03.jpg" ? "opacity-100 " : "opacity-40 "
+            gymImage === 2 ? "opacity-100 " : "opacity-40 "
           }`}
         />
         <img
-          src="/assets/acad07.jpg"
+          src="/assets/gym3.jpg"
           alt="gymImage"
-          onClick={() => setGymImage("acad07.jpg")}
+          onClick={() => setGymImage(3)}
           className={`w-36 h-28 shadow-md shadow-[#00000085] rounded-2xl cursor-pointer transition-opacity duration-300 ${
-            gymImage === "acad07.jpg" ? "opacity-100" : "opacity-40"
+            gymImage === 3 ? "opacity-100" : "opacity-40"
           }`}
         />
       </div>
