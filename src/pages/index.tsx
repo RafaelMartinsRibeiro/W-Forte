@@ -1,5 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+
+import { Info } from "../components/Info";
 import { Modalities } from "../components/Modalities";
 import { Schedule } from "../components/Schedule";
 import { Structure } from "../components/Structure";
@@ -19,21 +21,20 @@ const Home: NextPage = () => {
             className="w-full"
           />
         </section>
-
         <section>
           <Schedule />
         </section>
-
         <section>
           <Structure />
         </section>
-
         <section>
           <Modalities />
         </section>
       </main>
 
-      <footer></footer>
+      <footer>
+        <Info />
+      </footer>
     </div>
   );
 };
