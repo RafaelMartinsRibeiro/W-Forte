@@ -21,12 +21,15 @@ const Home: NextPage = () => {
             className="w-full"
           />
         </section>
+
         <section>
           <Schedule />
         </section>
+
         <section>
           <Structure />
         </section>
+
         <section>
           <Modalities />
         </section>

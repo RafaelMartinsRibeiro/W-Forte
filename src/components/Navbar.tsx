@@ -1,6 +1,21 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export function Navbar() {
+  const { pathname } = useRouter();
+  const router = useRouter();
+
+  const handleClick = (x: number, y: number) => {
+    if (pathname === "/") {
+      window.scrollTo(x, y);
+    } else {
+      router.push("/");
+      setTimeout(() => {
+        window.scrollTo(x, y);
+      }, 200);
+    }
+  };
+
   return (
     <div className="z-50 flex justify-between items-center bg-[#293036] text-brand-white sticky top-0 p-3 shadow-md shadow-[#00000085]">
       <Link href="/">
@@ -26,25 +41,25 @@ export function Navbar() {
       <div>
         <ul className="text-lg flex justify-center items-center list-none">
           <li
-            onClick={() => window.scrollTo(0, 450)}
+            onClick={() => handleClick(0, 450)}
             className="li-primary hover:text-brand-yellow"
           >
             <a>Horários</a>
           </li>
           <li
-            onClick={() => window.scrollTo(0, 865)}
+            onClick={() => handleClick(0, 865)}
             className="li-primary hover:text-brand-yellow"
           >
             <a>Estrutura</a>
           </li>
           <li
-            onClick={() => window.scrollTo(0, 1605)}
+            onClick={() => handleClick(0, 1605)}
             className="li-primary hover:text-brand-yellow"
           >
             <a>Modalidades</a>
           </li>
           <li
-            onClick={() => window.scrollTo(0, 9999)}
+            onClick={() => handleClick(0, 9999)}
             className="li-primary hover:text-brand-yellow"
           >
             <a>Informações</a>
