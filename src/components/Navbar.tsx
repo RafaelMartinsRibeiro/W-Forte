@@ -47,13 +47,13 @@ export function Navbar() {
             <a>Horários</a>
           </li>
           <li
-            onClick={() => handleClick(0, 865)}
+            onClick={() => handleClick(0, 932)}
             className="li-primary hover:text-brand-yellow"
           >
             <a>Estrutura</a>
           </li>
           <li
-            onClick={() => handleClick(0, 1605)}
+            onClick={() => handleClick(0, 1670)}
             className="li-primary hover:text-brand-yellow"
           >
             <a>Modalidades</a>
