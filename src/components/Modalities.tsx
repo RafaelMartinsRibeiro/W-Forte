@@ -3,7 +3,7 @@ import { useState } from "react";
 import { SeeMore } from "./SeeMore";
 
 export function Modalities() {
-  const [gymModality, setGymModality] = useState(1);
+  const [gymModality, setGymModality] = useState<number>(1);
 
   const changeNextModality = () => {
     setGymModality(gymModality === 5 ? 1 : gymModality + 1);

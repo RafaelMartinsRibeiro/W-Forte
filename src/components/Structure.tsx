@@ -1,4 +1,5 @@
 import { SwapLeftOutlined, SwapRightOutlined } from "@ant-design/icons";
+import Link from "next/link";
 import { useState } from "react";
 import { SeeMore } from "./SeeMore";
 
@@ -64,7 +65,11 @@ export function Structure() {
         />
       </div>
 
-      <SeeMore />
+      <Link href="/estrutura">
+        <a>
+          <SeeMore />
+        </a>
+      </Link>
     </div>
   );
 }
