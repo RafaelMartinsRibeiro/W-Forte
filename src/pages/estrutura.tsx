@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { About } from "../components/Estrutura/About";
+import { Equipments } from "../components/Estrutura/Equipments";
 
 export default function Estrutura() {
   return (
@@ -22,10 +23,17 @@ export default function Estrutura() {
           <h3 className="text-brand-yellow text-xl">
             Academia W FORTE Fitness
           </h3>
+          <span className="text-brand-white font-black">
+            Um ambiente preparado para atender toda a família.
+          </span>
         </div>
 
         <section>
           <About />
+        </section>
+
+        <section>
+          <Equipments />
         </section>
       </main>
     </div>

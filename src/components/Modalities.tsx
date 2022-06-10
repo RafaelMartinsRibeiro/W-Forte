@@ -1,5 +1,5 @@
-import { SwapLeftOutlined, SwapRightOutlined } from "@ant-design/icons";
 import { useState } from "react";
+import { SwapLeftOutlined, SwapRightOutlined } from "@ant-design/icons";
 import { SeeMore } from "./SeeMore";
 
 export function Modalities() {

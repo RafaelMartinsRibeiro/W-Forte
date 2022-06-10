@@ -27,7 +27,11 @@ export function Structure() {
         />
 
         <img
-          src={`/assets/gym${gymImage}.jpg`}
+          src={
+            gymImage === 2
+              ? `/assets/externalEquipment${gymImage}.jpg`
+              : `/assets/internalEquipment${gymImage}.jpg`
+          }
           alt="gymImage"
           className="w-[41.1rem] h-[27rem] shadow-md shadow-[#00000085] rounded-2xl"
         />
@@ -40,7 +44,7 @@ export function Structure() {
 
       <div className="flex items-center justify-center gap-5 mt-5">
         <img
-          src="/assets/gym1.jpg"
+          src="/assets/internalEquipment1.jpg"
           alt="gymImage"
           onClick={() => setGymImage(1)}
           className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
@@ -48,7 +52,7 @@ export function Structure() {
           }`}
         />
         <img
-          src="/assets/gym2.jpg"
+          src="/assets/externalEquipment2.jpg"
           alt="gymImage"
           onClick={() => setGymImage(2)}
           className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
@@ -56,7 +60,7 @@ export function Structure() {
           }`}
         />
         <img
-          src="/assets/gym3.jpg"
+          src="/assets/internalEquipment3.jpg"
           alt="gymImage"
           onClick={() => setGymImage(3)}
           className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
