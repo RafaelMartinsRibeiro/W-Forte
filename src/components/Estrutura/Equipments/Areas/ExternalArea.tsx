@@ -20,10 +20,20 @@ export function ExternalArea() {
       className="bg-no-repeat bg-cover bg-fixed "
     >
       <div className="backdrop-blur-md bg-black bg-opacity-70 w-full h-full flex flex-col items-center justify-center pb-2">
-        <h3 className="flex items-center justify-center text-brand-yellow w-[41.1rem]  my-2 p-3 border-[2px] border-brand-yellow border-solid rounded-xl font-black text-lg">
-          Área Externa
-        </h3>
-
+        <div className="flex gap-10">
+          <button
+            type="button"
+            className="flex items-center justify-center text-brand-yellow w-[35rem]  my-2 p-3 border-[2px] border-brand-yellow border-solid rounded-xl font-black text-lg transition-colors duration-200 hover:bg-brand-yellow hover:text-black"
+          >
+            Área Interna
+          </button>
+          <button
+            type="button"
+            className="flex items-center justify-center text-brand-yellow w-[35rem]  my-2 p-3 border-[2px] border-brand-yellow border-solid rounded-xl font-black text-lg transition-colors duration-200 hover:bg-brand-yellow hover:text-black"
+          >
+            Área Externa
+          </button>
+        </div>
         <div className="flex flex-col justify-center items-center">
           <div className="flex items-center justify-center">
             <SwapLeftOutlined
