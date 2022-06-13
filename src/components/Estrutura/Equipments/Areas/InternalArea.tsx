@@ -19,7 +19,7 @@ export function InternalArea() {
       }}
       className="bg-no-repeat bg-cover bg-fixed "
     >
-      <div className="pt-[4.5rem] backdrop-blur-md bg-black bg-opacity-70 w-full h-full flex flex-col items-center justify-center pb-2">
+      <div className="pt-[4.5rem] pb-10 backdrop-blur-md bg-black bg-opacity-70 w-full h-full flex flex-col items-center justify-center">
         <div className="flex flex-col justify-center items-center">
           <div className="flex items-center justify-center">
             <SwapLeftOutlined

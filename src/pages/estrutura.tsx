@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { About } from "../components/Estrutura/About";
 import { Equipments } from "../components/Estrutura/Equipments";
+import { Professors } from "../components/Estrutura/Professors";
 
 export default function Estrutura() {
   return (
@@ -34,6 +35,10 @@ export default function Estrutura() {
 
         <section>
           <Equipments />
+        </section>
+
+        <section>
+          <Professors />  
         </section>
       </main>
     </div>
