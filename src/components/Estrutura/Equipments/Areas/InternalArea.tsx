@@ -1,21 +1,21 @@
 import { useState } from "react";
 import { SwapLeftOutlined, SwapRightOutlined } from "@ant-design/icons";
 
-export function ExternalArea() {
-  const [externalEquipment, setExternalEquipment] = useState<number>(1);
+export function InternalArea() {
+  const [internalEquipment, setInternalEquipment] = useState<number>(1);
 
   const changeNextEquipment = () => {
-    setExternalEquipment(externalEquipment === 5 ? 1 : externalEquipment + 1);
+    setInternalEquipment(internalEquipment === 5 ? 1 : internalEquipment + 1);
   };
 
   const changePreviousEquipment = () => {
-    setExternalEquipment(externalEquipment === 1 ? 5 : externalEquipment - 1);
+    setInternalEquipment(internalEquipment === 1 ? 5 : internalEquipment - 1);
   };
 
   return (
     <div
       style={{
-        backgroundImage: `url('/assets/externalEquipment${externalEquipment}.jpg')`,
+        backgroundImage: `url('/assets/internalEquipment${internalEquipment}.jpg')`,
       }}
       className="bg-no-repeat bg-cover bg-fixed "
     >
@@ -28,8 +28,8 @@ export function ExternalArea() {
             />
 
             <img
-              src={`/assets/externalEquipment${externalEquipment}.jpg`}
-              alt="externalEquipment"
+              src={`/assets/internalEquipment${internalEquipment}.jpg`}
+              alt="internalEquipment"
               className="w-[41.1rem] h-[27rem] shadow-md shadow-[#00000085] rounded-2xl"
             />
 
@@ -41,43 +41,43 @@ export function ExternalArea() {
 
           <div className="flex items-center justify-center gap-5 mt-5">
             <img
-              src="/assets/externalEquipment1.jpg"
-              alt="externalEquipment"
-              onClick={() => setExternalEquipment(1)}
+              src="/assets/internalEquipment1.jpg"
+              alt="internalEquipment"
+              onClick={() => setInternalEquipment(1)}
               className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-                externalEquipment === 1 ? "opacity-100" : "opacity-40"
+                internalEquipment === 1 ? "opacity-100" : "opacity-40"
               }`}
             />
             <img
-              src="/assets/externalEquipment2.jpg"
-              alt="externalEquipment"
-              onClick={() => setExternalEquipment(2)}
+              src="/assets/internalEquipment2.jpg"
+              alt="internalEquipment"
+              onClick={() => setInternalEquipment(2)}
               className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-                externalEquipment === 2 ? "opacity-100 " : "opacity-40 "
+                internalEquipment === 2 ? "opacity-100 " : "opacity-40 "
               }`}
             />
             <img
-              src="/assets/externalEquipment3.jpg"
-              alt="externalEquipment"
-              onClick={() => setExternalEquipment(3)}
+              src="/assets/internalEquipment3.jpg"
+              alt="internalEquipment"
+              onClick={() => setInternalEquipment(3)}
               className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-                externalEquipment === 3 ? "opacity-100" : "opacity-40"
+                internalEquipment === 3 ? "opacity-100" : "opacity-40"
               }`}
             />
             <img
-              src="/assets/externalEquipment4.jpg"
-              alt="externalEquipment"
-              onClick={() => setExternalEquipment(4)}
+              src="/assets/internalEquipment4.jpg"
+              alt="internalEquipment"
+              onClick={() => setInternalEquipment(4)}
               className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-                externalEquipment === 4 ? "opacity-100" : "opacity-40"
+                internalEquipment === 4 ? "opacity-100" : "opacity-40"
               }`}
             />
             <img
-              src="/assets/externalEquipment5.jpg"
-              alt="externalEquipment"
-              onClick={() => setExternalEquipment(5)}
+              src="/assets/internalEquipment5.jpg"
+              alt="internalEquipment"
+              onClick={() => setInternalEquipment(5)}
               className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-                externalEquipment === 5 ? "opacity-100" : "opacity-40"
+                internalEquipment === 5 ? "opacity-100" : "opacity-40"
               }`}
             />
           </div>

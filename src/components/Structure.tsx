@@ -4,7 +4,7 @@ import { useState } from "react";
 import { SeeMore } from "./SeeMore";
 
 export function Structure() {
-  const [gymImage, setGymImage] = useState(1);
+  const [gymImage, setGymImage] = useState<number>(1);
 
   const changeNextImage = () => {
     setGymImage(gymImage === 3 ? 1 : gymImage + 1);
