@@ -1,7 +1,10 @@
-import { SwapLeftOutlined, SwapRightOutlined } from "@ant-design/icons";
-import Link from "next/link";
 import { useState } from "react";
+import Link from "next/link";
+
+import { SwapLeftOutlined, SwapRightOutlined } from "@ant-design/icons";
 import { SeeMore } from "./SeeMore";
+
+import { Images } from "../Images";
 
 export function Structure() {
   const [gymImage, setGymImage] = useState<number>(1);
@@ -27,11 +30,7 @@ export function Structure() {
         />
 
         <img
-          src={
-            gymImage === 2
-              ? `/assets/externalEquipment${gymImage}.jpg`
-              : `/assets/internalEquipment${gymImage}.jpg`
-          }
+          src={`/assets/${Images.gymImages[gymImage - 1].image}`}
           alt="gymImage"
           className="w-[41.1rem] h-[27rem] shadow-md shadow-[#00000085] rounded-2xl"
         />
@@ -43,30 +42,17 @@ export function Structure() {
       </div>
 
       <div className="flex items-center justify-center gap-5 mt-5">
-        <img
-          src="/assets/internalEquipment1.jpg"
-          alt="gymImage"
-          onClick={() => setGymImage(1)}
-          className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-            gymImage === 1 ? "opacity-100" : "opacity-40"
-          }`}
-        />
-        <img
-          src="/assets/externalEquipment2.jpg"
-          alt="gymImage"
-          onClick={() => setGymImage(2)}
-          className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-            gymImage === 2 ? "opacity-100 " : "opacity-40 "
-          }`}
-        />
-        <img
-          src="/assets/internalEquipment3.jpg"
-          alt="gymImage"
-          onClick={() => setGymImage(3)}
-          className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-            gymImage === 3 ? "opacity-100" : "opacity-40"
-          }`}
-        />
+        {Images.gymImages.map((image) => (
+          <img
+            key={image.id}
+            src={`/assets/${image.image}`}
+            alt="gymImage"
+            onClick={() => setGymImage(image.id)}
+            className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
+              gymImage === image.id ? "opacity-100" : "opacity-40"
+            }`}
+          />
+        ))}
       </div>
 
       <Link href="/estrutura">
