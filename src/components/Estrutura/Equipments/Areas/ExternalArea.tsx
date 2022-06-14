@@ -1,5 +1,8 @@
 import { useState } from "react";
+
 import { SwapLeftOutlined, SwapRightOutlined } from "@ant-design/icons";
+
+import { Images } from "../../../../Images";
 
 export function ExternalArea() {
   const [externalEquipment, setExternalEquipment] = useState<number>(1);
@@ -15,7 +18,9 @@ export function ExternalArea() {
   return (
     <div
       style={{
-        backgroundImage: `url('/assets/externalEquipment${externalEquipment}.jpg')`,
+        backgroundImage: `url('/assets/${
+          Images.externalEquipments[externalEquipment - 1].image
+        }')`,
       }}
       className="bg-no-repeat bg-cover bg-fixed "
     >
@@ -28,7 +33,9 @@ export function ExternalArea() {
             />
 
             <img
-              src={`/assets/externalEquipment${externalEquipment}.jpg`}
+              src={`/assets/${
+                Images.externalEquipments[externalEquipment - 1].image
+              }`}
               alt="externalEquipment"
               className="w-[41.1rem] h-[27rem] shadow-md shadow-[#00000085] rounded-2xl"
             />
@@ -40,46 +47,19 @@ export function ExternalArea() {
           </div>
 
           <div className="flex items-center justify-center gap-5 mt-5">
-            <img
-              src="/assets/externalEquipment1.jpg"
-              alt="externalEquipment"
-              onClick={() => setExternalEquipment(1)}
-              className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-                externalEquipment === 1 ? "opacity-100" : "opacity-40"
-              }`}
-            />
-            <img
-              src="/assets/externalEquipment2.jpg"
-              alt="externalEquipment"
-              onClick={() => setExternalEquipment(2)}
-              className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-                externalEquipment === 2 ? "opacity-100 " : "opacity-40 "
-              }`}
-            />
-            <img
-              src="/assets/externalEquipment3.jpg"
-              alt="externalEquipment"
-              onClick={() => setExternalEquipment(3)}
-              className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-                externalEquipment === 3 ? "opacity-100" : "opacity-40"
-              }`}
-            />
-            <img
-              src="/assets/externalEquipment4.jpg"
-              alt="externalEquipment"
-              onClick={() => setExternalEquipment(4)}
-              className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-                externalEquipment === 4 ? "opacity-100" : "opacity-40"
-              }`}
-            />
-            <img
-              src="/assets/externalEquipment5.jpg"
-              alt="externalEquipment"
-              onClick={() => setExternalEquipment(5)}
-              className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-                externalEquipment === 5 ? "opacity-100" : "opacity-40"
-              }`}
-            />
+            {Images.externalEquipments.map((equipment) => (
+              <img
+                key={equipment.id}
+                src={`/assets/${equipment.image}`}
+                alt="externalEquipment"
+                onClick={() => setExternalEquipment(equipment.id)}
+                className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
+                  externalEquipment === equipment.id
+                    ? "opacity-100"
+                    : "opacity-40"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>
