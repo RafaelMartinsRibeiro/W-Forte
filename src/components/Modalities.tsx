@@ -43,36 +43,15 @@ export function Modalities() {
           </div>
 
           <div className="flex items-center justify-center gap-6 mt-5">
-            <div
-              className={`w-4 h-4 border-2 border-solid border-brand-yellow rounded-full cursor-pointer transition-colors duration-200 ${
-                gymModality === 1 ? "bg-brand-yellow" : "bg-none"
-              }`}
-              onClick={() => setGymModality(1)}
-            ></div>
-            <div
-              className={`w-4 h-4 border-2 border-solid border-brand-yellow rounded-full cursor-pointer transition-colors duration-200 ${
-                gymModality === 2 ? "bg-brand-yellow" : "bg-none"
-              }`}
-              onClick={() => setGymModality(2)}
-            ></div>
-            <div
-              className={`w-4 h-4 border-2 border-solid border-brand-yellow rounded-full cursor-pointer transition-colors duration-200 ${
-                gymModality === 3 ? "bg-brand-yellow" : "bg-none"
-              }`}
-              onClick={() => setGymModality(3)}
-            ></div>
-            <div
-              className={`w-4 h-4 border-2 border-solid border-brand-yellow rounded-full cursor-pointer transition-colors duration-200 ${
-                gymModality === 4 ? "bg-brand-yellow" : "bg-none"
-              }`}
-              onClick={() => setGymModality(4)}
-            ></div>
-            <div
-              className={`w-4 h-4 border-2 border-solid border-brand-yellow rounded-full cursor-pointer transition-colors duration-200 ${
-                gymModality === 5 ? "bg-brand-yellow" : "bg-none"
-              }`}
-              onClick={() => setGymModality(5)}
-            ></div>
+            {[1, 2, 3, 4, 5].map((i) => (
+              <div
+                key={i}
+                className={`w-4 h-4 border-2 border-solid border-brand-yellow rounded-full cursor-pointer transition-colors duration-200 ${
+                  gymModality === i ? "bg-brand-yellow" : "bg-none"
+                }`}
+                onClick={() => setGymModality(i)}
+              ></div>
+            ))}
           </div>
 
           <SeeMore />
