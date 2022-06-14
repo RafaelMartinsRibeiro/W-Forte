@@ -6,7 +6,7 @@ export function Equipments() {
   const [area, setArea] = useState<number>(1);
 
   return (
-    <div >
+    <div>
       <div className="flex flex-col items-center justify-center relative">
         <h3 className="w-[95%] bg-brand-yellow rounded-xl p-3 font-black text-lg text-[#000000f1] flex justify-center items-center  shadow-[#00000085]">
           Nossos Equipamentos

@@ -1,5 +1,8 @@
 import { useState } from "react";
+
 import { SwapLeftOutlined, SwapRightOutlined } from "@ant-design/icons";
+
+import { Images } from "../../../../Images";
 
 export function InternalArea() {
   const [internalEquipment, setInternalEquipment] = useState<number>(1);
@@ -15,7 +18,9 @@ export function InternalArea() {
   return (
     <div
       style={{
-        backgroundImage: `url('/assets/internalEquipment${internalEquipment}.jpg')`,
+        backgroundImage: `url('/assets/${
+          Images.internalEquipments[internalEquipment - 1].image
+        }')`,
       }}
       className="bg-no-repeat bg-cover bg-fixed "
     >
@@ -28,7 +33,9 @@ export function InternalArea() {
             />
 
             <img
-              src={`/assets/internalEquipment${internalEquipment}.jpg`}
+              src={`/assets/${
+                Images.internalEquipments[internalEquipment - 1].image
+              }`}
               alt="internalEquipment"
               className="w-[41.1rem] h-[27rem] shadow-md shadow-[#00000085] rounded-2xl"
             />
@@ -40,46 +47,19 @@ export function InternalArea() {
           </div>
 
           <div className="flex items-center justify-center gap-5 mt-5">
-            <img
-              src="/assets/internalEquipment1.jpg"
-              alt="internalEquipment"
-              onClick={() => setInternalEquipment(1)}
-              className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-                internalEquipment === 1 ? "opacity-100" : "opacity-40"
-              }`}
-            />
-            <img
-              src="/assets/internalEquipment2.jpg"
-              alt="internalEquipment"
-              onClick={() => setInternalEquipment(2)}
-              className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-                internalEquipment === 2 ? "opacity-100 " : "opacity-40 "
-              }`}
-            />
-            <img
-              src="/assets/internalEquipment3.jpg"
-              alt="internalEquipment"
-              onClick={() => setInternalEquipment(3)}
-              className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-                internalEquipment === 3 ? "opacity-100" : "opacity-40"
-              }`}
-            />
-            <img
-              src="/assets/internalEquipment4.jpg"
-              alt="internalEquipment"
-              onClick={() => setInternalEquipment(4)}
-              className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-                internalEquipment === 4 ? "opacity-100" : "opacity-40"
-              }`}
-            />
-            <img
-              src="/assets/internalEquipment5.jpg"
-              alt="internalEquipment"
-              onClick={() => setInternalEquipment(5)}
-              className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
-                internalEquipment === 5 ? "opacity-100" : "opacity-40"
-              }`}
-            />
+            {Images.internalEquipments.map((equipment) => (
+              <img
+                key={equipment.id}
+                src={`/assets/${equipment.image}`}
+                alt="internalEquipment"
+                onClick={() => setInternalEquipment(equipment.id)}
+                className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
+                  internalEquipment === equipment.id
+                    ? "opacity-100"
+                    : "opacity-40"
+                }`}
+              />
+            ))}
           </div>
         </div>
       </div>
