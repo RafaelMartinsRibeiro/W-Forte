@@ -26,10 +26,10 @@ export const Images = {
     { id: 5, image: "modality5.jpg" },
   ],
   professors: [
-    { id: 1, image: "professor1.jpg" },
-    { id: 2, image: "professor2.jpg" },
-    { id: 3, image: "professor3.jpg" },
-    { id: 4, image: "professor4.jpg" },
-    { id: 5, image: "professor5.jpg" },
+    { name: "Willian Suzuki", id: 1, image: "professor1.jpg" },
+    { name: "Henrique Depieri", id: 2, image: "professor2.jpg" },
+    { name: "Odair Santos", id: 3, image: "professor3.jpg" },
+    { name: "Neuza Martins", id: 4, image: "professor4.jpg" },
+    { name: "Daysa Roberta", id: 5, image: "professor5.jpg" },
   ],
 };

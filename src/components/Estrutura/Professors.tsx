@@ -1,15 +1,10 @@
-import { SwapLeftOutlined, SwapRightOutlined } from "@ant-design/icons";
 import { useState } from "react";
 
-export function Professors() {
-  const professors = [
-    "Willian Suzuki",
-    "Henrique Depieri",
-    "Odair Santos",
-    "Neuza Martins",
-    "Daysa Roberta",
-  ];
+import { SwapLeftOutlined, SwapRightOutlined } from "@ant-design/icons";
 
+import { Images } from "../../Images";
+
+export function Professors() {
   const [professor, setProfessor] = useState<number>(1);
 
   const changeNextEquipment = () => {
@@ -28,14 +23,16 @@ export function Professors() {
 
       <div
         style={{
-          backgroundImage: `url('/assets/professor${professor}.jpg')`,
+          backgroundImage: `url('/assets/${
+            Images.professors[professor - 1].image
+          }')`,
         }}
         className="bg-no-repeat bg-cover bg-fixed "
       >
         <div className=" py-7 backdrop-blur-md bg-black bg-opacity-70 w-full h-full flex flex-col items-center justify-center">
           <div className="flex flex-col justify-center items-center">
             <h2 className="flex items-center justify-center bg-transparent text-brand-yellow w-[35rem]  my-2 p-3 border-[2px] border-brand-yellow border-solid rounded-xl font-black text-lg transition-colors duration-200">
-              {professors[professor - 1]}
+              {Images.professors[professor - 1].name}
             </h2>
 
             <div className="flex items-center justify-center">
@@ -45,7 +42,7 @@ export function Professors() {
               />
 
               <img
-                src={`/assets/professor${professor}.jpg`}
+                src={`/assets/${Images.professors[professor - 1].image}`}
                 alt="professor"
                 className="w-[35.1rem] h-[30rem] shadow-md shadow-[#00000085] rounded-2xl"
               />
@@ -56,36 +53,15 @@ export function Professors() {
               />
             </div>
             <div className="flex items-center justify-center gap-6 mt-5">
-              <div
-                className={`w-4 h-4 border-2 border-solid border-brand-yellow rounded-full cursor-pointer transition-colors duration-200 ${
-                  professor === 1 ? "bg-brand-yellow" : "bg-none"
-                }`}
-                onClick={() => setProfessor(1)}
-              ></div>
-              <div
-                className={`w-4 h-4 border-2 border-solid border-brand-yellow rounded-full cursor-pointer transition-colors duration-200 ${
-                  professor === 2 ? "bg-brand-yellow" : "bg-none"
-                }`}
-                onClick={() => setProfessor(2)}
-              ></div>
-              <div
-                className={`w-4 h-4 border-2 border-solid border-brand-yellow rounded-full cursor-pointer transition-colors duration-200 ${
-                  professor === 3 ? "bg-brand-yellow" : "bg-none"
-                }`}
-                onClick={() => setProfessor(3)}
-              ></div>
-              <div
-                className={`w-4 h-4 border-2 border-solid border-brand-yellow rounded-full cursor-pointer transition-colors duration-200 ${
-                  professor === 4 ? "bg-brand-yellow" : "bg-none"
-                }`}
-                onClick={() => setProfessor(4)}
-              ></div>
-              <div
-                className={`w-4 h-4 border-2 border-solid border-brand-yellow rounded-full cursor-pointer transition-colors duration-200 ${
-                  professor === 5 ? "bg-brand-yellow" : "bg-none"
-                }`}
-                onClick={() => setProfessor(5)}
-              ></div>
+              {[1, 2, 3, 4, 5].map((i) => (
+                <div
+                  key={i}
+                  className={`w-4 h-4 border-2 border-solid border-brand-yellow rounded-full cursor-pointer transition-colors duration-200 ${
+                    professor === i ? "bg-brand-yellow" : "bg-none"
+                  }`}
+                  onClick={() => setProfessor(i)}
+                ></div>
+              ))}
             </div>
           </div>
         </div>
