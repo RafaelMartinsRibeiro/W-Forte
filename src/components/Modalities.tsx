@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SwapLeftOutlined, SwapRightOutlined } from "@ant-design/icons";
 import { SeeMore } from "./SeeMore";
+import { AnimatePresence, motion } from "framer-motion";
 
 export function Modalities() {
   const [gymModality, setGymModality] = useState<number>(1);
@@ -30,11 +31,24 @@ export function Modalities() {
               className="text-brand-yellow text-6xl leading-3 mr-10 rounded-full  cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
             />
 
-            <img
-              src={`/assets/modality${gymModality}.jpg`}
-              alt="gymImage"
-              className="w-[48.9rem] h-[31.2rem] shadow-md shadow-[#00000085] rounded-2xl"
-            />
+            <div
+              className="grid items-center justify-center"
+              style={{ gridTemplateAreas: "content" }}
+            >
+              <AnimatePresence>
+                <motion.img
+                  key={`/assets/modality${gymModality}.jpg`}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 50 }}
+                  transition={{ duration: 0.5 }}
+                  src={`/assets/modality${gymModality}.jpg`}
+                  alt="gymImage"
+                  className="w-[48.9rem] h-[31.2rem] shadow-md shadow-[#00000085] rounded-2xl"
+                  style={{ gridArea: "content" }}
+                />
+              </AnimatePresence>
+            </div>
 
             <SwapRightOutlined
               onClick={changeNextModality}
