@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Head from "next/head";
 import { About } from "../components/Estrutura/About";
 import { Equipments } from "../components/Estrutura/Equipments";
@@ -5,7 +6,14 @@ import { Professors } from "../components/Estrutura/Professors";
 
 export default function Estrutura() {
   return (
-    <div className="max-w-full my-0 mx-auto flex flex-col">
+    <motion.div
+      key={"estrutura"}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+      className="max-w-full my-0 mx-auto flex flex-col"
+    >
       <Head>
         <title>Estrutura | W Forte</title>
       </Head>
@@ -38,9 +46,9 @@ export default function Estrutura() {
         </section>
 
         <section>
-          <Professors />  
+          <Professors />
         </section>
       </main>
-    </div>
+    </motion.div>
   );
 }
