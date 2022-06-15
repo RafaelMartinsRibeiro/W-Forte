@@ -37,7 +37,7 @@ export function Modalities() {
             >
               <AnimatePresence>
                 <motion.img
-                  key={`/assets/modality${gymModality}.jpg`}
+                  key={gymModality}
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 50 }}
