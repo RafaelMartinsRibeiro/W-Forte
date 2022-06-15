@@ -12,7 +12,7 @@ export function Navbar() {
       router.push("/");
       setTimeout(() => {
         window.scrollTo(x, y);
-      }, 200);
+      }, 10);
     }
   };
 
