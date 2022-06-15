@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Head from "next/head";
 
@@ -8,7 +9,14 @@ import { Structure } from "../components/Structure";
 
 const Home: NextPage = () => {
   return (
-    <div className="max-w-full my-0 mx-auto flex flex-col">
+    <motion.div
+      key={"estrutura"}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+      className="max-w-full my-0 mx-auto flex flex-col"
+    >
       <Head>
         <title>Início | W Forte</title>
       </Head>
@@ -38,7 +46,7 @@ const Home: NextPage = () => {
       <footer>
         <Info />
       </footer>
-    </div>
+    </motion.div>
   );
 };
 
