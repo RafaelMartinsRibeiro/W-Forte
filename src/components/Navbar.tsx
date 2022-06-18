@@ -46,12 +46,28 @@ export function Navbar() {
           >
             <a>Horários</a>
           </li>
-          <li
-            onClick={() => handleClick(0, 932)}
-            className="li-primary hover:text-brand-yellow"
-          >
-            <a>Estrutura</a>
+
+          <li className="li-primary ">
+            <div className="group  relative">
+              <Link href="/estrutura">
+                <a className="group-hover:text-brand-yellow">Estrutura</a>
+              </Link>
+              <div className="w-56 rounded-b-xl pb-3 flex flex-col items-center justify-center bg-[#293036] absolute top-10 left-1/2 transform -translate-x-1/2 opacity-0 invisible transition-all duration-300  group-hover:visible group-hover:opacity-100">
+                <a className="w-56 flex justify-center border-b-[1px] border-brand-yellow py-3 hover:text-brand-yellow ">
+                  Quem nós somos
+                </a>
+
+                <a className="w-56 flex justify-center border-b-[1px] border-brand-yellow py-3 hover:text-brand-yellow ">
+                  Equipamentos
+                </a>
+
+                <a className="w-56 flex justify-center pt-3 hover:text-brand-yellow ">
+                  Professores
+                </a>
+              </div>
+            </div>
           </li>
+
           <li
             onClick={() => handleClick(0, 1670)}
             className="li-primary hover:text-brand-yellow"
