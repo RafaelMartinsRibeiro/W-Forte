@@ -60,7 +60,7 @@ export function InternalArea() {
             />
           </div>
 
-          <div className="flex items-center justify-center gap-5 mt-5">
+          <div className="flex items-center justify-center gap-5 mt-5 z-50">
             {Images.internalEquipments.map((equipment) => (
               <img
                 key={equipment.id}

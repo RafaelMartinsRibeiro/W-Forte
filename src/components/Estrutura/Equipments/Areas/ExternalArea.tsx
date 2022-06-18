@@ -3,6 +3,7 @@ import { useState } from "react";
 import { SwapLeftOutlined, SwapRightOutlined } from "@ant-design/icons";
 
 import { Images } from "../../../../Images";
+import { AnimatePresence, motion } from "framer-motion";
 
 export function ExternalArea() {
   const [externalEquipment, setExternalEquipment] = useState<number>(1);
@@ -32,13 +33,26 @@ export function ExternalArea() {
               className="text-brand-yellow text-6xl leading-3 mr-10 rounded-full  cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
             />
 
-            <img
-              src={`/assets/${
-                Images.externalEquipments[externalEquipment - 1].image
-              }`}
-              alt="externalEquipment"
-              className="w-[41.1rem] h-[27rem] shadow-md shadow-[#00000085] rounded-2xl"
-            />
+            <div
+              className="grid items-center justify-center"
+              style={{ gridTemplateAreas: "content" }}
+            >
+              <AnimatePresence>
+                <motion.img
+                  key={externalEquipment}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 50 }}
+                  transition={{ duration: 0.5 }}
+                  src={`/assets/${
+                    Images.externalEquipments[externalEquipment - 1].image
+                  }`}
+                  alt="externalEquipment"
+                  className="w-[41.1rem] h-[27rem] shadow-md shadow-[#00000085] rounded-2xl"
+                  style={{ gridArea: "content" }}
+                />
+              </AnimatePresence>
+            </div>
 
             <SwapRightOutlined
               onClick={changeNextEquipment}
@@ -46,7 +60,7 @@ export function ExternalArea() {
             />
           </div>
 
-          <div className="flex items-center justify-center gap-5 mt-5">
+          <div className="flex items-center justify-center gap-5 mt-5 z-50">
             {Images.externalEquipments.map((equipment) => (
               <img
                 key={equipment.id}

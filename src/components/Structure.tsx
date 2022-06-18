@@ -54,7 +54,7 @@ export function Structure() {
         />
       </div>
 
-      <div className="flex items-center justify-center gap-5 mt-5">
+      <div className="flex items-center justify-center gap-5 mt-5 z-50">
         {Images.gymImages.map((image) => (
           <img
             key={image.id}

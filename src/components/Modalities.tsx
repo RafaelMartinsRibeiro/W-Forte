@@ -56,7 +56,7 @@ export function Modalities() {
             />
           </div>
 
-          <div className="flex items-center justify-center gap-6 mt-5">
+          <div className="flex items-center justify-center gap-6 mt-5 z-50">
             {[1, 2, 3, 4, 5].map((i) => (
               <div
                 key={i}
