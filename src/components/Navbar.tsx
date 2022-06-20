@@ -16,6 +16,17 @@ export function Navbar() {
     }
   };
 
+  const handleClickStructure = (x: number, y: number) => {
+    if (pathname === "/estrutura") {
+      window.scrollTo(x, y);
+    } else {
+      router.push("/estrutura");
+      setTimeout(() => {
+        window.scrollTo(x, y);
+      }, 10);
+    }
+  };
+
   return (
     <div className="z-50 flex justify-between items-center bg-[#293036] text-brand-white sticky top-0 p-3 shadow-md shadow-[#00000085]">
       <Link href="/">
@@ -44,7 +55,7 @@ export function Navbar() {
             onClick={() => handleClick(0, 450)}
             className="li-primary hover:text-brand-yellow"
           >
-            <a>Horários</a>
+            Horários
           </li>
 
           <li className="li-primary ">
@@ -52,18 +63,27 @@ export function Navbar() {
               <Link href="/estrutura">
                 <a className="group-hover:text-brand-yellow">Estrutura</a>
               </Link>
-              <div className="w-56 rounded-b-xl pb-3 flex flex-col items-center justify-center bg-[#293036] absolute top-10 left-1/2 transform -translate-x-1/2 opacity-0 invisible transition-all duration-300  group-hover:visible group-hover:opacity-100">
-                <a className="w-56 flex justify-center border-b-[1px] border-brand-yellow py-3 hover:text-brand-yellow ">
+              <div className="w-56 rounded-b-xl pb-3 flex flex-col items-center justify-center bg-[#293036] absolute top-10 left-1/2 transform -translate-x-1/2 opacity-0 invisible transition-all duration-500 group-hover:visible group-hover:opacity-100">
+                <span
+                  onClick={() => handleClickStructure(0, 400)}
+                  className="w-56 flex justify-center border-b-[1px] border-brand-yellow py-3 hover:text-brand-yellow "
+                >
                   Quem nós somos
-                </a>
+                </span>
 
-                <a className="w-56 flex justify-center border-b-[1px] border-brand-yellow py-3 hover:text-brand-yellow ">
+                <span
+                  onClick={() => handleClickStructure(0, 1100)}
+                  className="w-56 flex justify-center border-b-[1px] border-brand-yellow py-3 hover:text-brand-yellow "
+                >
                   Equipamentos
-                </a>
+                </span>
 
-                <a className="w-56 flex justify-center pt-3 hover:text-brand-yellow ">
+                <span
+                  onClick={() => handleClickStructure(0, 9999)}
+                  className="w-56 flex justify-center pt-3 hover:text-brand-yellow "
+                >
                   Professores
-                </a>
+                </span>
               </div>
             </div>
           </li>
@@ -72,17 +92,17 @@ export function Navbar() {
             onClick={() => handleClick(0, 1670)}
             className="li-primary hover:text-brand-yellow"
           >
-            <a>Modalidades</a>
+            Modalidades
           </li>
           <li
             onClick={() => handleClick(0, 9999)}
             className="li-primary hover:text-brand-yellow"
           >
-            <a>Informações</a>
+            Informações
           </li>
 
           <li className="li-primary p-1  text-brand-yellow border-2 border-solid border-brand-yellow rounded-xl hover:bg-brand-yellow hover:text-[#293036] hover:border-transparent">
-            <a>Agende seu treino</a>
+            Agende seu treino
           </li>
         </ul>
       </div>
