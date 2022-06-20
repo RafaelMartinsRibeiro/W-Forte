@@ -3,6 +3,7 @@ import { useState } from "react";
 import { SwapLeftOutlined, SwapRightOutlined } from "@ant-design/icons";
 
 import { Images } from "../../Images";
+import { AnimatePresence, motion } from "framer-motion";
 
 export function Professors() {
   const [professor, setProfessor] = useState<number>(1);
@@ -41,11 +42,24 @@ export function Professors() {
                 className="text-brand-yellow text-6xl leading-3 mr-10 rounded-full  cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
               />
 
-              <img
-                src={`/assets/${Images.professors[professor - 1].image}`}
-                alt="professor"
-                className="w-[35.1rem] h-[30rem] shadow-md shadow-[#00000085] rounded-2xl"
-              />
+              <div
+                className="grid items-center justify-center"
+                style={{ gridTemplateAreas: "content" }}
+              >
+                <AnimatePresence>
+                  <motion.img
+                    key={professor}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 50 }}
+                    transition={{ duration: 0.5 }}
+                    src={`/assets/${Images.professors[professor - 1].image}`}
+                    alt="professor"
+                    className="w-[35.1rem] h-[30rem] shadow-md shadow-[#00000085] rounded-2xl"
+                    style={{ gridArea: "content" }}
+                  />
+                </AnimatePresence>
+              </div>
 
               <SwapRightOutlined
                 onClick={changeNextEquipment}
@@ -56,7 +70,7 @@ export function Professors() {
               {[1, 2, 3, 4, 5].map((i) => (
                 <div
                   key={i}
-                  className={`w-4 h-4 border-2 border-solid border-brand-yellow rounded-full cursor-pointer transition-colors duration-200 ${
+                  className={`z-50 w-4 h-4 border-2 border-solid border-brand-yellow rounded-full cursor-pointer transition-colors duration-200 ${
                     professor === i ? "bg-brand-yellow" : "bg-none"
                   }`}
                   onClick={() => setProfessor(i)}
