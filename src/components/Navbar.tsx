@@ -88,12 +88,12 @@ export function Navbar() {
             </div>
           </li>
 
-          <li
-            onClick={() => handleClick(0, 1670)}
-            className="li-primary hover:text-brand-yellow"
-          >
-            Modalidades
+          <li className="li-primary hover:text-brand-yellow">
+            <Link href="/modalidades">
+              <a className="group-hover:text-brand-yellow">Modalidades</a>
+            </Link>
           </li>
+
           <li
             onClick={() => handleClick(0, 9999)}
             className="li-primary hover:text-brand-yellow"
