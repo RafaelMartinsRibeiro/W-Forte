@@ -66,11 +66,11 @@ export function Professors() {
                 className="text-brand-yellow text-6xl leading-3 ml-10 rounded-full  cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
               />
             </div>
-            <div className="flex items-center justify-center gap-6 mt-5">
+            <div className="flex items-center justify-center gap-6 mt-5 z-20">
               {[1, 2, 3, 4, 5].map((i) => (
                 <div
                   key={i}
-                  className={`z-50 w-4 h-4 border-2 border-solid border-brand-yellow rounded-full cursor-pointer transition-colors duration-200 ${
+                  className={`w-4 h-4 border-2 border-solid border-brand-yellow rounded-full cursor-pointer transition-colors duration-200 ${
                     professor === i ? "bg-brand-yellow" : "bg-none"
                   }`}
                   onClick={() => setProfessor(i)}

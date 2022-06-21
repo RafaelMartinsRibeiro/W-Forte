@@ -60,7 +60,7 @@ export function ExternalArea() {
             />
           </div>
 
-          <div className="flex items-center justify-center gap-5 mt-5 z-50">
+          <div className="flex items-center justify-center gap-5 mt-5 z-20">
             {Images.externalEquipments.map((equipment) => (
               <img
                 key={equipment.id}

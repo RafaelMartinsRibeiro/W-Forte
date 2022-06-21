@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { SwapLeftOutlined, SwapRightOutlined } from "@ant-design/icons";
-import { SeeMore } from "./SeeMore";
+
 import { AnimatePresence, motion } from "framer-motion";
+import { Images } from "../../Images";
 
 export function Modalities() {
   const [gymModality, setGymModality] = useState<number>(1);
@@ -32,19 +33,35 @@ export function Modalities() {
             />
 
             <div
-              className="grid items-center justify-center"
+              className="grid grid-cols-none items-center justify-center gap-5 "
               style={{ gridTemplateAreas: "content" }}
             >
+              <motion.div
+                key={gymModality}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.5 }}
+                className="w-80 h-52 flex-col mb-[-15.5rem] "
+              >
+                <span className="mb-4 flex items-center justify-center bg-brand-yellow rounded-xl p-3 font-black text-lg text-[#000000f1] shadow-[#00000085]">
+                  {Images.modalities[gymModality - 1].title}
+                </span>
+
+                <span className="text-brand-white">
+                  {Images.modalities[gymModality - 1].description}
+                </span>
+              </motion.div>
               <AnimatePresence>
                 <motion.img
                   key={gymModality}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 50 }}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 50 }}
                   transition={{ duration: 0.5 }}
                   src={`/assets/modality${gymModality}.jpg`}
                   alt="gymImage"
-                  className="w-[48.9rem] h-[31.2rem] shadow-md shadow-[#00000085] rounded-2xl"
+                  className="w-[35.9rem] h-[23.2rem] shadow-md shadow-[#00000085] rounded-2xl"
                   style={{ gridArea: "content" }}
                 />
               </AnimatePresence>
@@ -56,7 +73,7 @@ export function Modalities() {
             />
           </div>
 
-          <div className="flex items-center justify-center gap-6 mt-5 z-50">
+          <div className="flex items-center justify-center gap-6 mt-5 z-20">
             {[1, 2, 3, 4, 5].map((i) => (
               <div
                 key={i}
@@ -67,8 +84,6 @@ export function Modalities() {
               ></div>
             ))}
           </div>
-
-          <SeeMore />
         </div>
       </div>
     </div>

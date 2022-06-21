@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 import { motion } from "framer-motion";
-import { Modalities } from "../components/Modalidades";
+import { Modalities } from "../components/Modalidades/Modalities";
 
 export default function Modalidades() {
   return (
