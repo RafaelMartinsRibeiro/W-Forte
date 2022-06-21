@@ -28,7 +28,7 @@ export function Navbar() {
   };
 
   return (
-    <div className="z-50 flex justify-between items-center bg-[#293036] text-brand-white sticky top-0 p-3 shadow-md shadow-[#00000085]">
+    <div className="z-50 flex justify-between items-center backdrop-blur-lg bg-[#293036] bg-opacity-50 text-brand-white sticky top-0 p-3 shadow-md shadow-[#00000085]">
       <Link href="/">
         <a>
           <div className="group flex items-center ml-1">
@@ -63,7 +63,7 @@ export function Navbar() {
               <Link href="/estrutura">
                 <a className="group-hover:text-brand-yellow">Estrutura</a>
               </Link>
-              <div className="w-56 rounded-b-xl pb-3 flex flex-col items-center justify-center bg-[#293036] absolute top-10 left-1/2 transform -translate-x-1/2 opacity-0 invisible transition-all duration-500 group-hover:visible group-hover:opacity-100">
+              <div className="w-56 rounded-b-xl pb-3 flex flex-col items-center justify-center bg-[#293036] bg-opacity-80 absolute top-[3.4rem] left-1/2 transform -translate-x-1/2 opacity-0 invisible transition-all duration-500 group-hover:visible group-hover:opacity-100">
                 <span
                   onClick={() => handleClickStructure(0, 400)}
                   className="w-56 flex justify-center border-b-[1px] border-brand-yellow py-3 hover:text-brand-yellow "
@@ -101,8 +101,9 @@ export function Navbar() {
             Informações
           </li>
 
-          <li className="li-primary p-1  text-brand-yellow border-2 border-solid border-brand-yellow rounded-xl hover:bg-brand-yellow hover:text-[#293036] hover:border-transparent">
+          <li className=" z-50 li-primary text-[#000000f1] p-1 hover hover:text-brand-white">
             Agende seu treino
+            <span className="z-[-1] absolute top-0 right-0 border-b-[79px] border-l-[60px] border-l-transparent border-brand-yellow border-r-[180px]"></span>
           </li>
         </ul>
       </div>
