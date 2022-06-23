@@ -4,7 +4,7 @@
 
 @layer components {
   .li-primary {
-    @apply font-black ml-14 cursor-pointer transition-colors duration-200;
+    @apply font-black flex justify-center w-full sm:w-auto my-4 sm:my-0 sm:ml-4 md:ml-6 lg:ml-9 xl:ml-14 cursor-pointer transition-colors duration-200;
   }
 }
 

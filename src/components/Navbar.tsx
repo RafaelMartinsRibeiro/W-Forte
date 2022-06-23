@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+import { Menu, Transition } from "@headlessui/react";
+import { MenuOutlined } from "@ant-design/icons";
+
 export function Navbar() {
   const { pathname } = useRouter();
   const router = useRouter();
@@ -28,20 +31,20 @@ export function Navbar() {
   };
 
   return (
-    <div className="z-50 flex justify-between items-center backdrop-blur-lg bg-[#293036] bg-opacity-50 text-brand-white sticky top-0 p-3 shadow-md shadow-[#00000085]">
+    <div className="z-50 flex-col flex sm:flex-row justify-center sm:justify-between items-center backdrop-blur-lg bg-[#293036] bg-opacity-50 text-brand-white sticky top-0 p-2 lg:p-3 shadow-md shadow-[#00000085]">
       <Link href="/">
         <a>
           <div className="group flex items-center ml-1">
             <img
               src="/favicon.png"
               alt="header icon"
-              className="w-14 h-14 rounded-2xl ml-1 shadow-sm shadow-[#00000085]"
+              className="w-9 sm:w-12 md:w-14 h-9 sm:h-12 md:h-14 rounded-2xl md:ml-1 shadow-sm shadow-[#00000085]"
             />
             <div className="ml-3 flex flex-col items-center">
-              <h1 className="ml-3 font-black text-2xl transition-colors duration-200 group-hover:text-brand-yellow">
+              <h1 className="ml-1 sm:ml-3 font-black text-xl sm:text-xs md:text-[0.94rem] lg:text-lg xl:text-2xl transition-colors duration-200 group-hover:text-brand-yellow">
                 W FORTE Fitness
               </h1>
-              <span className="font-cursive text-[0.6rem] font-semibold">
+              <span className="font-cursive hidden sm:inline-block sm:text-[0.45rem] md:text-[0.53rem] lg:text-[0.57rem] xl:text-[0.6rem] font-semibold">
                 AQUI VOCÊ É ÚNICO
               </span>
             </div>
@@ -49,8 +52,8 @@ export function Navbar() {
         </a>
       </Link>
 
-      <div>
-        <ul className="text-lg flex justify-center items-center list-none">
+      <div className="hidden sm:flex">
+        <ul className="sm:text-[0.63rem] md:text-xs lg:text-base xl:text-lg flex justify-center items-center list-none">
           <li
             onClick={() => handleClick(0, 450)}
             className="li-primary hover:text-brand-yellow"
@@ -63,7 +66,7 @@ export function Navbar() {
               <Link href="/estrutura">
                 <a className="group-hover:text-brand-yellow">Estrutura</a>
               </Link>
-              <div className="w-56 rounded-b-xl pb-3 flex flex-col items-center justify-center bg-[#293036] bg-opacity-80 absolute top-[3.4rem] left-1/2 transform -translate-x-1/2 opacity-0 invisible transition-all duration-500 group-hover:visible group-hover:opacity-100">
+              <div className="w-56 rounded-b-xl pb-3 flex flex-col items-center justify-center bg-[#293036] bg-opacity-80 absolute top-[3.25rem] left-1/2 transform -translate-x-1/2 opacity-0 invisible transition-all duration-500 group-hover:visible group-hover:opacity-100">
                 <span
                   onClick={() => handleClickStructure(0, 400)}
                   className="w-56 flex justify-center border-b-[1px] border-brand-yellow py-3 hover:text-brand-yellow "
@@ -101,11 +104,69 @@ export function Navbar() {
             Informações
           </li>
 
-          <li className=" z-50 li-primary text-[#000000f1] p-1 hover hover:text-brand-white">
+          <li className=" z-50 li-primary text-[#000000f1] lg:p-1 hover hover:text-brand-white">
             Agende seu treino
-            <span className="z-[-1] absolute top-0 right-0 border-b-[79px] border-l-[60px] border-l-transparent border-brand-yellow border-r-[180px]"></span>
+            <span className="z-[-1] absolute top-0 right-0 sm:border-b-[4rem] md:border-b-[4.4rem] lg:border-b-[4.9rem] sm:border-l-[3.75rem] md:border-l-[3.75rem] lg:border-l-[3.75rem] sm:border-l-transparent md:border-l-transparent lg:border-l-transparent sm:border-r-[5.5rem] md:border-r-[7rem] lg:border-r-[10rem] xl:border-r-[11.25rem] border-brand-yellow "></span>
           </li>
         </ul>
+      </div>
+
+      {/* ↓ Mobile menu ↓ */}
+      <div className="flex flex-col sm:hidden">
+        <Menu>
+          <Menu.Button>
+            <MenuOutlined className="text-brand-yellow text-2xl cursor-pointer transition-all duration-200 active:shadow-inner active:shadow-[#000000bb]" />
+          </Menu.Button>
+
+          <Transition
+            enter="transition duration-100 ease-out"
+            enterFrom="transform scale-50 opacity-0"
+            enterTo="transform scale-100 opacity-100"
+            leave="transition duration-75 ease-out"
+            leaveFrom="transform scale-100 opacity-100"
+            leaveTo="transform scale-50 opacity-0"
+          >
+            <Menu.Items className="">
+              <Menu.Item>
+                <>
+                  <ul className="sm:text-[0.63rem] w-full sm:w-auto flex flex-col justify-center items-center list-none">
+                    <li
+                      onClick={() => handleClick(0, 450)}
+                      className="li-primary hover:text-brand-yellow"
+                    >
+                      Horários
+                    </li>
+
+                    <li className="li-primary ">
+                      <Link href="/estrutura">
+                        <a className="hover:text-brand-yellow">Estrutura</a>
+                      </Link>
+                    </li>
+
+                    <li className="li-primary hover:text-brand-yellow">
+                      <Link href="/modalidades">
+                        <a className="group-hover:text-brand-yellow">
+                          Modalidades
+                        </a>
+                      </Link>
+                    </li>
+
+                    <li
+                      onClick={() => handleClick(0, 9999)}
+                      className="li-primary hover:text-brand-yellow"
+                    >
+                      Informações
+                    </li>
+
+                    <li className="li-primary text-brand-yellow border-2 border-brand-yellow p-3 rounded-3xl hover:text-brand-white hover:bg-brand-yellow hover:border-transparent">
+                      Agende seu treino
+                    </li>
+                  </ul>
+                </>
+              </Menu.Item>
+            </Menu.Items>
+          </Transition>
+        </Menu>
       </div>
     </div>
   );
