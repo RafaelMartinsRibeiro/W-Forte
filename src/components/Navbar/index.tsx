@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import { Menu, Transition } from "@headlessui/react";
-import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { MobileNavbar } from "./MobileNavbar";
 
 export function Navbar() {
