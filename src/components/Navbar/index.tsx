@@ -54,7 +54,7 @@ export function Navbar() {
       <div className="hidden sm:flex">
         <ul className="sm:text-[0.63rem] md:text-xs lg:text-base xl:text-lg flex justify-center items-center list-none">
           <li
-            onClick={() => handleClick(0, 450)}
+            onClick={() => handleClick(0, 280)}
             className="li-primary hover:text-brand-yellow"
           >
             Horários

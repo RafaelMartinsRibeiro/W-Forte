@@ -23,16 +23,18 @@ export default function Estrutura() {
           <img
             src="/assets/aqui-voce-unico.jpg"
             alt="Structure main image"
-            className="w-full h-[28rem]"
+            className="w-full xl:h-[28rem]"
           />
         </section>
 
         <div className="flex flex-col justify-center items-center font-black  my-7">
-          <h2 className="text-brand-white text-5xl mb-3">Estrutura</h2>
-          <h3 className="text-brand-yellow text-xl">
+          <h2 className="text-brand-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3">
+            Estrutura
+          </h2>
+          <h3 className="text-brand-yellow text-sm sm:text-base md:text-lg lg:text-xl">
             Academia W FORTE Fitness
           </h3>
-          <span className="text-brand-white font-black">
+          <span className="text-brand-white text-xs sm:text-sm md:text-base lg:text-lg font-black">
             Um ambiente preparado para atender toda a família.
           </span>
         </div>
