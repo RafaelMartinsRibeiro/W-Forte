@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { Info } from "../components/Info";
+import { Info } from "../components/Infos";
 import { Modalities } from "../components/Modalidades/Modalities";
 import { Schedule } from "../components/Schedule";
 import { Structure } from "../components/Structure";

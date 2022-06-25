@@ -1,22 +1,22 @@
 export function Info() {
   return (
     <div className="flex flex-col items-center justify-center bg-[#111111] pb-9">
-      <h2 className="text-shadow font-black text-brand-white text-4xl my-7">
+      <h2 className="text-shadow font-black text-brand-white text-xl sm:text-2xl md:text-3xl lg:text-4xl my-7">
         Informações
       </h2>
 
-      <div className="flex gap-16 ">
-        <div>
+      <div className="flex flex-col justify-center items-center sm:flex-row gap-10 md:gap-12 lg:gap-16 ">
+        <div className="flex-shrink-0">
           <img
             src="/assets/owners.jpg"
             alt="Owners Image"
-            className="w-48 h-auto border-4 border-solid border-brand-yellow rounded-tl-[2rem] rounded-br-[2rem] shadow-lg shadow-[#00000085]"
+            className="w-36 border-4 border-solid border-brand-yellow rounded-tl-[2rem] rounded-br-[2rem] shadow-lg shadow-[#00000085]"
           />
         </div>
 
-        <div className="flex flex-col items-center gap-16">
+        <div className="flex flex-col text-center items-center gap-10 sm:gap-16">
           <div>
-            <h3 className="text-lg text-brand-yellow font-black">
+            <h3 className="text-base lg:text-lg text-brand-yellow font-black">
               Redes sociais
             </h3>
             <div className="mt-2 flex items-center justify-evenly">
@@ -39,16 +39,20 @@ export function Info() {
           </div>
 
           <div className="flex flex-col items-center">
-            <h3 className="text-lg text-brand-yellow font-black">Contatos</h3>
-            <div className="text-sm text-[#aaaaaa] font-black mt-1">
+            <h3 className="text-base lg:text-lg text-brand-yellow font-black">
+              Contatos
+            </h3>
+            <div className="text-xs sm:text-sm text-[#aaaaaa] font-black text-center mt-1">
               Telefone: <a href="tel:+5544998681999">(44) 99868-1999</a>
             </div>
           </div>
         </div>
 
         <div className="flex flex-col items-center ">
-          <h3 className="text-lg text-brand-yellow font-black">Endereço</h3>
-          <span className="text-sm text-[#aaaaaa] font-black ">
+          <h3 className="text-base lg:text-lg text-brand-yellow font-black">
+            Endereço
+          </h3>
+          <span className="text-center text-xs sm:text-sm text-[#aaaaaa] font-black ">
             R. Maurício Mançano Mago, 37 - Jardim Custodio, Marialva - PR,
             86990-000
           </span>
@@ -56,7 +60,7 @@ export function Info() {
             <img
               src="/assets/address.png"
               alt="address"
-              className="w-[25rem] mt-2 border-4 border-solid border-brand-yellow rounded-lg"
+              className="w-[20rem] sm:w-[18rem] md:w-[20rem] lg:w-[23rem] mt-2 border-4 border-solid border-brand-yellow rounded-lg"
             />
           </a>
         </div>
