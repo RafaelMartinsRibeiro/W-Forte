@@ -30,7 +30,7 @@ export function InternalArea() {
           <div className="flex items-center justify-center">
             <SwapLeftOutlined
               onClick={changePreviousEquipment}
-              className="text-brand-yellow text-6xl leading-3 mr-10 rounded-full  cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
+              className="text-brand-yellow text-2xl sm:text-5xl md:text-6xl leading-3 mr-5 sm:mr-10 rounded-full  cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
             />
 
             <div
@@ -48,7 +48,7 @@ export function InternalArea() {
                     Images.internalEquipments[internalEquipment - 1].image
                   }`}
                   alt="internalEquipment"
-                  className="w-[41.1rem] h-[27rem] shadow-md shadow-[#00000085] rounded-2xl"
+                  className="w-[16rem] sm:w-[25rem] md:w-[32rem] lg:w-[41.1rem] h-[14rem] sm:h-[20rem] md:h-[24rem] lg:h-[27rem] shadow-md shadow-[#00000085] rounded-2xl"
                   style={{ gridArea: "content" }}
                 />
               </AnimatePresence>
@@ -56,7 +56,7 @@ export function InternalArea() {
 
             <SwapRightOutlined
               onClick={changeNextEquipment}
-              className="text-brand-yellow text-6xl leading-3 ml-10 rounded-full  cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
+              className="text-brand-yellow text-2xl sm:text-5xl md:text-6xl leading-3 ml-5 sm:ml-10 rounded-full  cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
             />
           </div>
 
@@ -67,7 +67,7 @@ export function InternalArea() {
                 src={`/assets/${equipment.image}`}
                 alt="internalEquipment"
                 onClick={() => setInternalEquipment(equipment.id)}
-                className={`w-28 h-24 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
+                className={`w-[3.5rem] sm:w-[5.8rem] h-[3.5rem] sm:h-20 shadow-md shadow-[#00000085] rounded-xl cursor-pointer transition-opacity duration-300 ${
                   internalEquipment === equipment.id
                     ? "opacity-100"
                     : "opacity-40"
