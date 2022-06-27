@@ -26,7 +26,7 @@ export function Structure() {
       <div className="flex items-center justify-center">
         <SwapLeftOutlined
           onClick={changePreviousImage}
-          className="text-brand-yellow text-2xl sm:text-5xl md:text-6xl leading-3 mr-5 sm:mr-10 rounded-full  cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
+          className="text-brand-yellow text-2xl leading-3 sm:text-5xl sm:leading-3 md:text-6xl md:leading-3 mr-5 sm:mr-10 rounded-full  cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
         />
         <div
           className="grid items-center justify-center"
@@ -49,7 +49,7 @@ export function Structure() {
 
         <SwapRightOutlined
           onClick={changeNextImage}
-          className="text-brand-yellow text-2xl sm:text-5xl md:text-6xl leading-3 ml-5 sm:ml-10 rounded-full  cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
+          className="text-brand-yellow text-2xl leading-3 sm:text-5xl sm:leading-3 md:text-6xl md:leading-3 ml-5 sm:ml-10 rounded-full  cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
         />
       </div>
 

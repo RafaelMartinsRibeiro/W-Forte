@@ -21,7 +21,7 @@ export function Modalities() {
       className="bg-no-repeat bg-cover bg-fixed "
     >
       <div className="backdrop-blur-lg bg-black bg-opacity-70 w-full h-full flex flex-col items-center justify-center pb-9">
-        <h2 className="text-shadow font-black text-brand-white text-4xl my-7">
+        <h2 className="text-shadow font-black text-brand-white text-xl sm:text-2xl md:text-3xl lg:text-4xl my-7">
           Modalidades
         </h2>
 
@@ -29,47 +29,43 @@ export function Modalities() {
           <div className="flex items-center justify-center">
             <SwapLeftOutlined
               onClick={changePreviousModality}
-              className="text-brand-yellow text-6xl leading-3 mr-10 rounded-full  cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
+              className="text-brand-yellow text-2xl leading-3 sm:text-5xl sm:leading-3 md:text-6xl md:leading-3 ml-4 xl:ml-0 mr-5 sm:mr-10 rounded-full  cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
             />
 
-            <div
-              className="grid grid-cols-none items-center justify-center gap-5 "
-              style={{ gridTemplateAreas: "content" }}
-            >
-              <motion.div
-                key={gymModality}
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.5 }}
-                className="w-80 h-52 flex-col mb-[-15.5rem] "
-              >
-                <span className="mb-4 flex items-center justify-center bg-brand-yellow rounded-xl p-3 font-black text-lg text-[#000000f1] shadow-[#00000085]">
+            <div className="flex justify-center flex-col lg:flex-row gap-5">
+              <div className="sm:w-[27rem] md:w-[30.9rem] lg:w-[35.9rem] xl:w-80">
+                <span className="text-sm sm:text-base md:text-lg mb-4 flex items-center justify-center bg-brand-yellow rounded-xl p-3 font-black text-[#000000f1] shadow-[#00000085]">
                   {Images.modalities[gymModality - 1].title}
                 </span>
 
-                <span className="text-brand-white">
+                <span className="text-xs sm:text-sm md:text-base text-brand-white">
                   {Images.modalities[gymModality - 1].description}
                 </span>
-              </motion.div>
-              <AnimatePresence>
-                <motion.img
-                  key={gymModality}
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 50 }}
-                  transition={{ duration: 0.5 }}
-                  src={`/assets/modality${gymModality}.jpg`}
-                  alt="gymImage"
-                  className="w-[35.9rem] h-[23.2rem] shadow-md shadow-[#00000085] rounded-2xl"
-                  style={{ gridArea: "content" }}
-                />
-              </AnimatePresence>
+              </div>
+
+              <div
+                className="grid items-center justify-center"
+                style={{ gridTemplateAreas: "content" }}
+              >
+                <AnimatePresence>
+                  <motion.img
+                    key={gymModality}
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 50 }}
+                    transition={{ duration: 0.5 }}
+                    src={`/assets/modality${gymModality}.jpg`}
+                    alt="gymImage"
+                    className="w-[20rem] sm:w-[27rem] md:w-[30.9rem] lg:w-[35.9rem] h-[15rem] sm:h-[22.2rem] md:h-[23.2rem] shadow-md shadow-[#00000085] rounded-2xl"
+                    style={{ gridArea: "content" }}
+                  />
+                </AnimatePresence>
+              </div>
             </div>
 
             <SwapRightOutlined
               onClick={changeNextModality}
-              className="text-brand-yellow text-6xl leading-3 ml-10 rounded-full cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
+              className="text-brand-yellow text-2xl leading-3 sm:text-5xl sm:leading-3 md:text-6xl md:leading-3 mr-4 xl:mr-0 ml-5 sm:ml-10 rounded-full  cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
             />
           </div>
 

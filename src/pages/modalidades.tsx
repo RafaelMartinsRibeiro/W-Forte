@@ -22,7 +22,7 @@ export default function Modalidades() {
           <img
             src="/assets/nossas-modalidades.png"
             alt="Structure main image"
-            className="w-full h-[28rem]"
+            className="w-full xl:h-[28rem]"
           />
         </section>
 

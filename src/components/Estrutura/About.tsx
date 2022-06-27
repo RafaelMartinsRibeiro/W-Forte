@@ -10,7 +10,7 @@ export function About() {
         <div className="bg-brand-yellow rounded-xl p-3 font-black text-lg text-[#000000f1] flex justify-center items-center mb-4 shadow-[#00000085]">
           <h3 className="text-sm sm:text-base md:text-lg">Quem nós somos</h3>
         </div>
-        <div className="text-xs sm:text-sm md:text-base  text-brand-white font-black flex flex-col">
+        <div className="text-xs sm:text-sm md:text-base text-brand-white font-black flex flex-col">
           <span>
             A Academia W FORTE FITNESS é uma nova visão em treinos de musculação
             e academia.

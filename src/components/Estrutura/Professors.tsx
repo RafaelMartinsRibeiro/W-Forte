@@ -39,7 +39,7 @@ export function Professors() {
             <div className="flex items-center justify-center">
               <SwapLeftOutlined
                 onClick={changePreviousEquipment}
-                className="text-brand-yellow text-2xl sm:text-5xl md:text-6xl leading-3 mr-5 sm:mr-10 rounded-full  cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
+                className="text-brand-yellow text-2xl leading-3 sm:text-5xl sm:leading-3 md:text-6xl md:leading-3 mr-5 sm:mr-10 rounded-full cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
               />
 
               <div
@@ -55,7 +55,7 @@ export function Professors() {
                     transition={{ duration: 0.5 }}
                     src={`/assets/${Images.professors[professor - 1].image}`}
                     alt="professor"
-                    className="w-64 sm:w-[21rem] md:w-[26rem] lg:w-[35.1rem] h-[17rem] sm:h-[23rem] md:h-[27rem] lg:h-[30rem] shadow-md shadow-[#00000085] rounded-2xl"
+                    className="w-[17rem] sm:w-[21rem] md:w-[26rem] lg:w-[35.1rem] h-[17rem] sm:h-[23rem] md:h-[27rem] lg:h-[30rem] shadow-md shadow-[#00000085] rounded-2xl"
                     style={{ gridArea: "content" }}
                   />
                 </AnimatePresence>
@@ -63,7 +63,7 @@ export function Professors() {
 
               <SwapRightOutlined
                 onClick={changeNextEquipment}
-                className="text-brand-yellow text-2xl sm:text-5xl md:text-6xl leading-3 ml-5 sm:ml-10 rounded-full  cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
+                className="text-brand-yellow text-2xl leading-3 sm:text-5xl sm:leading-3 md:text-6xl md:leading-3 ml-5 sm:ml-10 rounded-full cursor-pointer opacity-70 transition-all duration-200  shadow-lg shadow-[#000000bb] hover:opacity-100 active:shadow-inner active:shadow-[#000000bb]"
               />
             </div>
             <div className="flex items-center justify-center gap-6 mt-5 z-20">
