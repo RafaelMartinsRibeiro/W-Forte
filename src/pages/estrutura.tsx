@@ -1,8 +1,9 @@
-import { motion } from "framer-motion";
 import Head from "next/head";
-import { About } from "../components/Estrutura/About";
-import { Equipments } from "../components/Estrutura/Equipments";
-import { Professors } from "../components/Estrutura/Professors";
+
+import { motion } from "framer-motion";
+import { About } from "../components/EstruturaPage/About";
+import { Equipments } from "../components/EstruturaPage/Equipments";
+import { Professors } from "../components/EstruturaPage/Professors";
 
 export default function Estrutura() {
   return (

@@ -53,7 +53,7 @@ export function MobileNavbar() {
           leaveFrom="transform scale-100 opacity-100"
           leaveTo="transform scale-50 opacity-0"
         >
-          <Menu.Items className="">
+          <Menu.Items>
             <Menu.Item>
               <>
                 <ul className="w-full flex flex-col justify-center items-center list-none">
